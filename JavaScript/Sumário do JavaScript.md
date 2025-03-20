@@ -19,7 +19,5 @@
 10: Objetos
 11:
 
---: Chá anti-esquecimento
-
 copie oq deseja ver e aperte Ctrl + F e cole oq vc selecionou, 
 não esqueça q o número tbm deve ser copiado

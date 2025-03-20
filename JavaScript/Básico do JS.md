@@ -1040,8 +1040,6 @@ eh executado sempre junto da função
 
 -----------------------------------------------------------------
 
-## --: Chá anti-esquecimento
-
 Dentro do JS podemos escrever coisas diretamente em nosso site, geralmente para mostrar resultados imediatos
 dependendo de come se usa, para isso devemos usar o comando .innerHTML  e depois usado o = apresentar o
 valor que o mesmo vai escrever para nós

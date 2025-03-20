@@ -28,7 +28,6 @@ Sumário do curso de Java
  13.2: Método construtor de uma classe
  13.3: Métodos (funcionalidades) de uma classe
 
---: Chá anti-esquecimento
 
 copie oq deseja verm aperte Ctrl + F e cole oq vc selecionou, 
 não esqueça q o número tbm deve ser copiado
@@ -1009,8 +1008,6 @@ do arquivo da classe, ou seja, iss
 
 
 -----------------------------------------------------------------
-
---: Chá anti-esquecimento
 
 No intelliJ podemos usar o "sout" para escrever automáticamente "System.out.println();", poupando assim tempo sem precisar escrever
 mais do que o necessário
