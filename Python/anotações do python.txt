@@ -1,0 +1,389 @@
+ordem de precedência:
+1: ()
+2: **
+3: * / // %
+4: + -
+de preferancia sempre a quem tá mais alto na lista
+oque fica dentro dos parenteses tera uma maior prioridade, exemplo:
+3*(5+4)**2==243 
+
+-----------------------------------------------------------------
+
+Expressões relacionadas
+
+== (igualdade)
+2 == 3
+False
+
+!= (desigualdade)
+2 != 3
+True
+
+> (maior)
+3 > 3
+False
+
+>= (maior ou igual)
+3 >= 3
+True
+
+< (menor)
+2 < 3
+True
+
+<= (menor ou igual)
+4 <= 3
+False
+
+----------------------Operadores lógicos-------------------------
+
+AND significa E
+OR significa OU
+
+-----------------------------------------------------------------
+
+Para fazermos a porcentagem de algum número usamos:
+
+n1 = float(input('Dígite aqui o sálário do funcionário: '))
+salanovo = n1 + (n1 * 15 / 100)
+print(f'Quem ganhava R${n1:.2f} passou a ganhar R${salanovo:.2f}')
+
+o 15 seria a porcentagem, básicamente, se eu quissese aumentar sálario do funcionário em 25% eu
+substituiria o 15 por 25, porém  mantendo o resto d código
+
+-----------------------------------------------------------------
+
+O termo igual(=) serve para atribuir algo a alguma coisa
+Já o termo (==) serve para dizer que algo é igual
+
+-----------------------------------------------------------------
+
+No lugar da sintaxe do comando .format() no comando print, podemos usar f antes das aspas em print 
+exemplo:
+print(f'Olá, {name}!)
+exemplo no código:
+name = str(input('Seu nome: '))
+
+print(f'Olá, {name}')
+
+Seu nome: Wilson
+
+Olá, Wilson
+
+-----------------------------------------------------------------
+
+
+Você pode apenas somar os valores das variáveis dentro das { }
+exemplo;
+
+n1 = int(input("Digite um número: "))
+n2 = int(input("Digite outro número: "))
+
+print(f"O resultado da soma é: {n1+n2}")
+
+-----------------------------------------------------------------
+
+import math
+
+significados dos sinônimos
+
+ceil ---> arredonda um número pra cima
+floor ---> arredonda um número pra baixo
+trunc ---> corta todas as casas do número após a separação decimal
+pow ---> potencialização
+sqrt ---> raiz quadrada
+factorial ---> faz a faturação
+
+para importar um sinônimo especifico usamos:
+from math import (sinônimo a ser importado)
+adicione uma virgula se quiser importar dois sinônimos específicos
+
+-----------------------------------------------------------------
+
+import pygame
+
+é usado na criação de jogos, podemos usa o mesmo para lermos imagens, e qualquer outra coisa relacionada a jogos
+neste exemplo aqui usamos para reproduzirmos um mp3
+
+import pygame
+pygame.init()
+pygame.mixer.music.load('joji.mp3')
+pygame.mixer.music.play()
+input()
+pygame.event.wait()
+print('Tocando agora Joji - Slow Dancing in the Dark')
+
+lembrando que o arquivo mp3 original deve estar na mesma pasta que o arquivo .py se encontra
+
+-----------------------------------------------------------------
+
+Os tipos primitivos são:
+
+int()  --> Para números inteiros ------------ 17, 21, 35, 42
+
+float() -> Números de ponto flutuante ---2.3, 1.6, 14.9, -67.1
+
+bool() --> Armazena True ou False --------True, False
+
+str() ----> Conjunto de caracteres -------- 'narigudo', 'Pedro', 'feioso'
+
+type() ---> Indica o tipo primitivo da var -  x = 'Sapo Tunado'   print(type(x)) logo seu tipo primitivo é string
+
+-----------------------------------------------------------------
+
+Os operadores aritméticos são:
+
++ -> Adição              ** -> Potencia
+  - -> Subtração           // -> Divisão inteira
+  * -> Multiplicação        % -> Resto da divisão
+  / > Divisão -
+
+-----------------------------------------------------------------
+
+Import > Importa uma biblioteca - import math
+
+  from math import cos -> Importa somente a funçao cos da biblioteca math
+
+  math -> Biblioteca de operadores aritméticos
+
+     sqrt()  ---> Raiz Quadrada de um numero ------- raiz = math.sqrt(numero)
+     floor() ---> Arredonda o numero para baixo ---- 5,23 fica 5,00
+     ceil() -----> Retorna um valor inteiro ---------------- 5,23 fica 5
+     hypot() ---> Retorna a hipotenusa dos catetos - math.hypot(co, ca)
+     pow() ----> Potencia de um numero ---------------- pow(2, 3) = 2³ = 8
+     radians()-> Converte em graus radianos ---------- print(math.radians(180))
+     cos() -----> Retorne o cosseno em radianos --- print(math.cos(math.radians(x)))
+     sin() ------> Retorne o seno em radianos --------- print(math.sin(math.radians(x)))
+     tan() -----> Retorne a tangente em radianos---- print(math.tan(math.radians(x)))
+  
+-----------------------------------------------------------------
+
+  random -> Gerar numeros aleatórios 
+
+      randint() > Escolhe um número interio que está dentro dos parentêses --- random.randint(1, 10)
+      choice() -> Retorna um elemento aleatório da sequência ----------------- random.choice(x)
+      shuffle() > Embaralha a sequência x no lugar --------------------------- random.shuffle(y)
+
+-----------------------------------------------------------------
+
+Manipulação textual:
+
+  frase[9] ------> Pega os caracteres das posições indicadas ------------------- letra E
+  frase[9:13] -> Pega os caracteres das posições indicadas ------------------- ENDE
+  frase[9:18:2]--> Pega os caracteres das posições indicadas pulando 2 - EDNOA
+  len() -------------> Mostra quantas letras tem a frase --------------- len(frase) = 38 letras
+  count() ---------> Conta quantas vezes aparece a letra escolhida ----------- frase.count('s')
+  find() ------------> Procura os caracteres escolhido --------------------- frase.find('aprendendo')
+  replace() ------> Troca uma palavra por outra na frase --------------------------- frase.replace('python','JavaScript')
+  upper() ---------> Colocar todas as outras letras em maiúsculo -------------- frase.upper()
+  lower() ---------> Colocar todas as outras letras em minusculo -------------- frase.lower()
+  capilalize() ---> Coloca todas a frase em minusculo menos a 1 letra --- frase.capitalize()
+  title() ------------> Todas as palavras começa com letra maiúscula --------- frase.title()
+  strip() -----------> Tira o espaço do começo e no fim da frase ----------------- frase.strip()  frase.lstrip()  frase.rstrip()
+  split() -----------> Vai ocorrer uma divisão entre os espaços da frase ----- frase.split()
+  .join() -----------> Juntar uma coisa com a outra ---- '-'.join.frase Estou-aprendendo-a-programar-em-python
+
+É válido manter em mente que cada frase contém uma numeração, por exemplo:
+'Olá mundo'
+a sequencia de números dessa frase é, respectivamente:
+O=0; l=1; á=2; (espaçamento)=3; m=4; u=5; n=6; d=7; o=8.
+Os espaços contidos dentre a frase também recebem um número
+
+-----------------------------------------------------------------
+
+Para textos grandes podemos usar o seguinte metádo para escrever sem usar vários prints
+
+print("""That's my way and I go
+Esse é meu caminho e nele eu vou!
+Eu gosto de pensar que a luz do Sol vai iluminar o meu amanhecer
+Mas se na manhã o Sol não surgir
+Por trás da nuvens cinzas tudo vai mudar
+A chuva passará e o tempo vai abrir
+A luz de um novo dia sempre vai estar""")
+
+Básicamente, adicionamos três aspas ("""texto aqui"""), assim podemos ter textos grandes de uma maneira
+fácil de se escrever, resumindo o código e o deixando menos poluido.
+
+-----------------------------------------------------------------
+
+(dica do exercício 27 do curso em vídeo)
+o [-1] pode ser utilizado para se referir ao último objeto de uma lista, assim como [-2] seria a penúltima e assim por diante.
+
+Portanto, podemos resolver da seguinte forma:
+
+nome = input('Qual o seu nome completo? ')
+m = nome.split()
+print(f'Seu primeiro nome é {m[0]} e seu último nome é {m[-1]}')
+
+-----------------------------------------------------------------
+
+Condições:
+
+Basicamente é um efeito borboleta, se escolher a ação A isto irá acontecer e se o caminho B for escolhido
+isto irá acontecer
+Exemplo:
+
+tmpcar = int(input('Digite a idade de seu carro: '))
+if tmpcar <=3:
+    print('Seu carro é novo')
+else:
+    print('Seu carro é um pouco mais velho')
+
+(NÃO SE ESQUEÇA DE POR ':' APÓS IF & ELSE!)
+
+É possível fazermos este comando em apenas 3 linhas!
+
+tmpcar = int(input('Digite a idade de seu carro: '))
+print('Seu carro é novo' if tmpcar <=5 else 'Seu carro é um pouco mais velho')
+print('Fim do programa!')
+
+-----------------------------------------------------------------
+
+Cores no terminal:
+Este é o códido padrão de como se põe cores no terminal, lembre-se de que este código deve sempre estar
+dentro da função print
+
+código sem cor/final de cor:
+\033[m
+
+Código com cor:
+\033[;0;97;40m
+	
+Exemplos:
+
+print('\033[;0;97;40m Olá mundo!\033[m')
+
+a = 4
+b = 8
+print(f'Os números \033[1;31m{a}\033[m e \033[1;107m{b}\033[m são pares!!')
+
+a = 4
+b = 8
+print(f'Os números \033[1;31;40m{a}\033[m e \033[1;107;32m{b}\033[m são pares!!')
+
+Podemos atribuir valores as cores e usalas dps na função FORMAT
+
+vernegri = '\033[;1;31m'
+endcolor = '\033[m'
+c = 'Igor'
+print(f'Olá, muito prazer em te conheçer {vernegri}{c}{endcolor}')
+
+Um jeito mais fácil de fazer, sem ter a necessidade de atribuir várias funções a cada cor indivídualmente é usar um métado
+conhecido como Dicionário, assim:
+
+c = 'Igor'
+
+De uma maneira mais completa ficaria assim:
+
+cores = {'limpa':'\033[m',
+         'azul':'\033[34m',
+         'amarelo':'\033[33m',
+         'pretobranco':'\033[7;97m'}
+
+exemplo:
+
+print(f'Olá, muito prazer em te conheçer {cores['pretobranco']}{c}{cores['limpa']}')
+
+style      ---> estilo do texto
+text       ---> cor do texto
+background ---> cor do fundo do texto
+
+
+style                text                    background
+ 
+none        0  |  30      black     |   preto       40
+bold        1  |  31      red       |   vermelho    41
+underline   4  |  32      green     |   verde       42
+negative    7  |  33      yellow    |   amarelo     43
+               |  34      blue      |   azul        44
+               |  35      Magenta   |   Magenta     45
+               |  36      cyan      |   ciano       46
+               |  37      grey      |   cinza       47
+               |  97      white     |   branco      107
+
+-----------------------------------------------------------------
+
+Estruturas de repetição "For"
+
+vamos supor que eu tenha um personagem q queira pegae uma maçã, porém tem buracos no
+caminho, como eu montaria um comando que fizesse isto de uma maneira simples?
+
+faremos o seguinte:
+
+laço c no intervalo(0,3):
+   passo
+   pula
+passo 
+pega
+ 
+Levando isto pro Python ficará
+
+for c in range(0,3):
+   passo
+   pula
+passo
+pega   
+
+Assim nosso personagem irá cruzar o caminho sem dificuldades.
+
+Agora vamos supor que existe moedas no caminho que quero pegar elas, para montar esse comando
+usaremos algo que já vimos anteriormente
+
+moeda = m 
+
+laço c no intervalo(0,3):
+   se m
+      pega
+   passo
+   pula
+passo
+pega
+ 
+Em Python:
+ 
+for c in range(0,3):
+   if m
+      pega
+   passo
+   pula
+passo
+pega
+
+Visualize as conexões, a indentação do comando, procure entendelo e dominar ele. 
+Você pode também aninhalo com outras funções, como o if por exemplo.
+ 
+E CUIDADO!!! Caso os parentêses sejam (1,6) o último número NÃO será contado, o Python ignora o último número, ent
+caso queira adicionar um número a mais adiciona o + 1 após a váriavel dentros dos parênteses do range()
+
+--------------------------outas dicas----------------------------
+
+lista = []
+
+lista.sum() = soma todos os itens da lista. 
+lista.append(item) = pega o item e joga no final lista.
+lista.index(item) = retorna a posição em que o item se encontra dentro da lista.
+
+
+------------------Estrutura de repetição while-------------------
+
+A função WHILE funciona básicamente de um maneira parecida com o IF. No IF devemos saber quantos passos queremos
+dar, porém e quan do não sabemos? Ai entra a função WHILE, básicamente:
+
+maçã = m
+
+while not m:
+  passo
+pega
+
+isso significa, enquanto o nosso personagem não pegar a maça ele vai repetir o comando 'passo', quando ele
+alcançar a maçã a função tera cumprido seu papel
+
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+

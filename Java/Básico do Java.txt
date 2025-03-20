@@ -1,0 +1,1019 @@
+--------------------------Sumário--------------------------------
+
+Sumário do curso de Java
+
+1: HotSpot e JIT
+2: JVM, JRE e JDK
+3: Uso do -version e suas variações
+4: intelliJ e comentários
+5: Váriavel e Constante
+6: Tipos Priimitivos
+7: Estrutura de Condição IF
+8: Estrutura de Condição SWITCH
+9: Estrutura de condição TERNÁRIA
+10: Manipulação de Strings com valueOf e chartAt
+ 10.1: Manipulação de Strings - startsWith e endsWith
+ 10.2: Manipulação de Strings - trim, length e strip
+ 10.3: Manipulação de Strings - toLowerCase e toUpperCase
+ 10.4: Manipulação de Strings - indexOf e lastIndexOf
+ 10.5: Manipulação de Strings - replace e substring
+11: Arrays Simples
+ 11.1: Arrays Multidimensionais
+12: Loops - For
+ 12.1: Loops - Foreach
+ 12.2: Loops - While
+ 12.3: Loops - Do While
+13: Programação Orientada a Objetos (POO)
+ 13.1: Criação de objetos com classe
+ 13.2: Método construtor de uma classe
+ 13.3: Métodos (funcionalidades) de uma classe
+
+--: Chá anti-esquecimento
+
+copie oq deseja verm aperte Ctrl + F e cole oq vc selecionou, 
+não esqueça q o número tbm deve ser copiado
+
+-----------------------------------------------------------------
+
+
+1: HotSpot e JIT
+
+O HotSpot/JVM e o são como se fossem irmão, eles são básicamente dominíos, eles foream criados pela Oracle, um exemplo muito bom do
+hotspot eh a "GraalVM", muitas empresas famosas usam ela, a própria Oracle usa ela
+
+Já o "JIT"(Just-in-Time) eke otimiza a execução do HotSpot, ele compila o bytecode, isso faz com que o código seja otimizado para o ambiente
+que ele está sendo executado, melhorando a performace e o desempenho do código
+
+O Java roda em todo lugar gracas a sua funcionalizade, onde ele gera bytecodes em linguagem de máquinas, ai que entra as JVM e o JIT, seguindo
+esse exemplo:
+
+Código Java -> Compilador -> Bytecode -> (dentro da JVM) Class Loader -> Bytecode Verifier -> Interpretador -> JIT -> (fora da JVM) Máquina
+
+o JIT atua nessa área, ele fica dentro da JVM ao lado do interpretador, digamos que temso um código enorme cheio de repetições, para
+o interpretador mandar isso várias vezes, gerando várias linhas de códigos binários, nesse momento o JIT entra, ele faz com que o
+interpretador corte esse trabalho desnecessário e sem precisar gerar inumeras linhas de repetições, ele diz se o código deve se repetir, se
+ele deve ser ignorado, excluido e etc 
+
+
+-----------------------------------------------------------------
+
+
+2: JVM, JRE e JDK
+
+Se você tem uma JRE, ele obrigatoriamente inclui uma JVM, o JDK instala todos os outros (JRE e a JVM), ele também incluí 
+várias bibliotecas úteis para nos ajudar nos códigos, veja o signifcado de cada um desses termos:
+JDK = Java Development Kit
+JRE = Java Runtime Enviroment
+JVM = Máquina Virtual do Java
+
+
+-----------------------------------------------------------------
+
+
+3: Uso do -version e suas variações
+
+Para nós vermos qual a versão atual do Java, nós devemos abrir o GIT BASH e escrever "java -version"
+
+Para começarmos com uma vm, usamos o "javac -version", assim nós vemos o pacote de versão do JDK, sendo ele o responsável por compilar
+os códios em Java
+
+Para verificarmos nossas variaveis de ambiente usamos
+
+Após criamos um código em Java usando o "nano", ele gera um bytecode (se o código estiver semanticamente correto), depois, após o código ter sido
+compilado, nós devemos mandar o bytecode para a nossa máquina e assim ele será executado atraves do terminal BASH
+
+Veja um exemplo de como dar um HelloWord em Java:
+
+////////////////
+public class HelloWord {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+        }   
+}
+\\\\\\\\\\\\\\\\
+
+
+-----------------------------------------------------------------
+
+
+4: intelliJ e comentários
+
+Uma das melhores IDLES para programar em Java eh o intelliJ, ele vem vom várias funções exclusivas e que já facilitam nossas vidas
+quando codamos em Java, igual o PYCharm para o Python
+
+Para comentarmos em Java ele eh igual ao JavaScript, para comentarmos em uma única linha usamos o "//" e para multiplas linhas usamos o
+/* no começo da linha e */ no final da linha onde acaba o comentário
+
+Os nossos cógigos pricipais sempre estarão dentro de src, as outras pastas normalmente são dependências, como informações de bibliotecas, git,
+git ignore e etc
+
+Dentro do intelliJ existe uma funcionalidade chamada de TODO, ela eh como se fosse uma lista de afazeres dentro da nossa IDLE, para usarmos
+nós devemos usar o comando de comentário "//" e escrever logo após "todo", assim ficará marcado como uma teraf a ser feita
+
+
+-----------------------------------------------------------------
+
+
+5: Váriavel e Constante
+
+De uma maneira muito parecida com o JS, o Java tem variáveis e Constantes, elas significam exatamente oq seu nome quer dizer, uma vaiável pode
+mudar várias vezes com o decorrer do programa, já a constante uma vez declarada não pode ser mais alterada
+
+O Java eh uma linguagem extremamente verbosa e tipada, isso significa que sempre devemos declarar o tipo de dado que uma variável que vai
+receber, veja um exemplo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Olá, mundo!";
+        System.out.println(txt);
+    }
+}
+Declaramos uma variável que recebe uma String com o nome de "txt" e seu valor eh "Olá, mundo!"
+\\\\\\\\\\\\\\\\
+
+nós podemos livremente alterar o valor dessa variável ao decorrer do programa desde que seja uma o tipo primitivo
+String
+
+Para as constantes basta adicionar o termo "final" antes ou depois de declarar o tipo primitivo do dado que queremos, veja um exemplo abaixo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        final String txt2 = "Olá, mundo!";
+        System.out.println(txt2);
+    }
+}
+\\\\\\\\\\\\\\\\
+
+-----------------------------------------------------------------
+
+
+6: Tipos Primitivos
+
+Tipos de dados que envolvem textos e caracteres não naturais:
+String = linha de texto
+
+Tipos de dados que envolvem números naturais e decimais:
+int = número natural inteiro
+double = número natural com casa decimal
+
+Tipos de dados que envolvem operadores lógicos:
+boolean = true ou falso
+
+Veja os exemplos de cada um dos tipos primitivos no Java:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        // tipo de texto
+        String txt = "Olá, mundo!";
+        System.out.println(txt);
+
+        // número inteiro
+        int NumInt = 18;
+        System.out.println(NumInt);
+
+        // número decimal
+        double NumDouble = 3.14;
+        System.out.println(NumDouble);
+
+        // tipos boleanos
+        boolean BoolTrue = true;
+        boolean BoolFalse = false;
+        System.out.println(BoolTrue);
+        System.out.println(BoolFalse);
+    }
+}
+\\\\\\\\\\\\\\\\
+
+
+-----------------------------------------------------------------
+
+
+7: Estrutura de Condição IF
+
+Abaixo temos os tipos padrões de operadores lógicos, sendo eles os mais padrões que já conhecemos, com o igual, diferente, maior que, 
+menor que e assim por diante. Veja eles abaixo:
+
+== = igual
+>= = maior ou igual
+<= = menor ou igual
+!= = diferente de
+> = maior
+< = menor
+&& = e (X tem que ser iguais a Y para que o movimento Z aconteca)
+|| = algum dos (X ou Y tem que ser igual a algo para que o movimento Z aconteca)
+! = negação
+
+A estrutura de condição IF eh muito parecida com o JS, tem a mesma lógica e seguem preceitos muito parecidos, tanto lógicamente tanto
+quanto visualmente, veja um exemplo abaixo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        int n1 = 10;
+        int n2 = 5;
+
+        if (n1 > n2) {
+            System.out.println("O número 1 é maior");
+        } else {
+            System.out.println("O número 2 é maior");
+        }
+    }
+}
+Código simples que analisa se o "n1" é maior que o "n2" e retorna uma mensagem para cada uma das situações 
+\\\\\\\\\\\\\\\\
+
+digamos que o "n1" seja igual ao "n2", neste caso nosso programa não iria rodar já que dentro da nossa estrutura IF essa possibidade não foi
+informada, neste caso nós podemos utilizar p "else if {}", básicamente a mesma coisa do JS, veja um exemplo abaixo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        int n1 = 10;
+        int n2 = 10;
+
+        if (n1 > n2) {
+            System.out.println("O número 1 é maior que o número 2");
+        } else if (n1 == n2) {
+            System.out.println("O número 1 é igual ao número 2");
+        } else {
+            System.out.println("O número 2 é maior que o número 1");
+        }
+    }
+}
+neste código nós verificamos todas as possibilidades que podem acontecer se o número 1 foi maior ou menor que o número 2 ou
+se os dois números são iguais
+\\\\\\\\\\\\\\\\
+
+dessa forma nós conseguimos fazer quanats estruturas aninhadas nós quisermos, podemos colocar quantos "else if" quisermos e não
+se esqueca que nós podemos usar livremente somente um IF caso seja necessário
+
+
+-----------------------------------------------------------------
+
+
+8: Estrutura de Condição SWITCH
+
+A estrutura SWITCH funciona de uma maneija parecida com o JS, extremamente útil para códigos e funções extremamentes
+específicas e com valores fechados, procure extender o minino possível estas extruturas. Veja um exemplo abaixo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        int n1 = 2;
+
+        switch (n1) {
+            case 1:
+                System.out.println("Valor 1");
+                break;
+            case 2:
+                System.out.println("Valor 2");
+                break;
+            case 3:
+                System.out.println("Valor 3");
+                break;
+            default:
+                System.out.println("Valor acima do permitido");
+                break;
+        }
+    }
+}
+um código que verifica o valor de n1 e caso ele seja compativel com algumas das cases ele retorna uma mensagem
+\\\\\\\\\\\\\\\\
+
+nunca se esqueça que após terminar de declarar oq aquela case vai fazer inserir um break, já que ele eh responsável por barrar o
+código para que ele não fique num loop repetindo sem parar
+
+o default serve de uma maneira parecida com o else, ele básicamente diz oq acontece caso nenhuma das cases acima seja atendida, neste caso
+ele escreve vê se o valor de n1 foi maior que 3 ele escreve algo no terminal
+
+
+-----------------------------------------------------------------
+
+
+9: Estrutura de Condição TERNÁRIA
+
+A estrurua de condição Ternária é bem parecida com a estrura de IF e ELSE, quando soó se tem dois caminhos a serem seguidos, sempre que situações
+assim aparecerem recomnda-se usar a condição ternária, porém quando eh mais de dois caminhos usamos o IF, IF ELSE e ELSE
+
+o perador ternário eh representado por dois sinais, sendo eles "?" e ":", pense nisso como um if e else, sendo:
+? = IF
+: = ELSE
+os parâmetros são passados antes do "?" que funciona como um IF, e depois passamos oq acontece após o ":" como se ele fosse um ELSE, exemplo:
+
+////////////////
+public class Main {
+    public static void main(String[] args) {
+        int n1 = 20;
+
+        String res = (n1 <= 17) ? "Menor de idade" : "Maior de idade";
+	System.out.println(res)
+    }
+}
+Código que pega o "n1" e o analisa, caso ele seja menor ou igual a 17 o "?"(que tem função a função de um IF) vai entrar em
+ação, caso contrário o ":"(que tem função de ELSE) vai ser executado
+\\\\\\\\\\\\\\\\
+
+as condições ternárias precisam obrigatoriamente estarem armazenadas dentro de uma váriavel ou constante, caso contrário ela não vai funcionar. É
+importante lembrar que dependendo do que nós queremos que retorne a nós, precisamos especificar isso na variável/constante que armazena a
+condição ternária, neste caso ela armazena uma String e seu retorno deverá ser uma string
+
+
+-----------------------------------------------------------------
+
+
+10: Manipulação de Strings com valueOf e chartAt
+
+O comando String eh próprio do Java, isso justifica o pq ele se escreve diferente dos outros tipos primitivos. Ele por trazer inumeras
+funcionalidades consigo mesmo eh recomendado visitar o site:
+https://www.javatpoint.com
+já que ele traz inumeras informações úteis dessas Strings
+
+Vejamos algumas funcionalidades das mesmas a seguir
+
+O método "valueOf()" converte qualquer tipo de dado em uma String, seja ele numeros inteiros, decimais e etc
+
+com a conversão de dados para String isso nos permite manipular diversos tipos de dados livremente, usando diversas
+fncionalidades, um exemplo de funcionalidade eh o "charAt()", ele serve para nós retornarmos qual o caractere que tem naquele
+índice, lembre-se que o índice sempre começa no 0 em ordem crescente. Os retornos que esse método develve sempre será uma String, independente
+do que ele esteja apresentando no momento, exemplo:
+
+////////////////
+public class StrManopulation {
+    public static void main(String[] args) {
+        double n1 = 21.131;
+        String ConVar = String.valueOf(n1);
+        System.out.println(ConVar.charAt(2));
+    }
+}
+aqui nós temos um código que recebe um double na variável "n1", depois ele eh convertido para uma "String" e armazenada numa
+variável, após isso usando o "pritnln" nós passamos a variável ja convertida em uma "String" e usando o método ".charAt()" ele
+retorna qual o caractere na terceira posição, neste caso seria o "."
+\\\\\\\\\\\\\\\\
+
+10.1: Manipulação de Strings - startsWith e endsWith
+
+Ainda na manipulação de Strings existem dois métodos dentro do Java, sendo eles:
+startsWith() = começa com
+endsWith() =  termina com
+eles são métados extremamente parecidos, possuindo algumas poucas diferenças, onde no "startsWith()" nós passamos um
+préfixo que verifica se na String que estamos manipulando ele tem esse préfixo que passamos, retornando um valor boleano 
+que deve estar armazenado dentro de uma váriavel com o tipo primitivo do mesmo (boolean), lembre-se que o Java é CaseSensitive. 
+Podemos passar também uma "offset" dentro do "startsWith()" após já termos declarado o métado anterior, ele é responsável por dizer
+em qual índice ele deve começar a verificar a String que está sendo manipulada
+
+Exemplo de um "startsWith()" com um "offset":
+
+////////////////
+public class StrManopulation {
+    public static void main(String[] args) {
+        String str1 = "Olá, mundo";
+        boolean start_offset = (str1.startsWith("O", 1));
+        System.out.println(start_offset);
+    }
+}
+Aqui temos um código que recebe uma String com o valor de "Olá, mundo", logo após isso nós jogamos para dentro uma variável boleana, o
+primeiro termo dentro do "startsWith()" ve qual o(s) caractere(s) que queremos q ele procure, o segundo argumento (que eh o offset) diz
+de qual índice ele deve começar
+\\\\\\\\\\\\\\\\
+
+O "endsWith()" funciona da mesma forma que o "startsWith()", sua única diferença eh que ele ao invés de começar da esquerda para a direita
+ele faz a análise da direita para a esquerda, veja um exemplo a seguir:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str2 = "Eu amo programar em Java";
+        boolean end = str2.endsWith("a");
+        System.out.println(end);
+    }
+}
+Fizemos a mesma coisa que antes porém agora usando o métado "endsWith()", criamos uma variável String que recebe o nome de "str2", depois
+criamos uma variável boleana que análisa a variável "str2", ela 'pergunta' se o texto detro da variável termina com a letra "a", neste caso
+como ela termina o nosso código vai retornar o valor boleano "true"
+\\\\\\\\\\\\\\\\
+
+10.2: Manipulação de Strings - trim, length e strip
+
+O método "length()" funciona de uma maneira identica a várias outras linguagens de programação, isso sigifica que ele lê nossa
+String e retorna quantos caracteres tem dentro da String, não se esqueça que como em qualquer linguagem de programação, o "length()" também
+lê os espaços pois eles contam como caracteres, isto inclui os espaços antes ou no final da String
+
+Para removermos estes espaços no final das Strings existem algumas formas, sendo elas o método "strip()" ou o método "trim()", os dois
+possuem diferentes jeitos de se usar, porém entregam resultados parecidos, veja os exemplos daqui a pouco
+
+Tenha sempre em mente que o método "length()" conta quantos caracteres existem dentro da variável (seja ele ponto, letra, espaço e etc), 
+"trim()" e "strip()" removem estes espaços no começo e no final da frase. Fique agora com os exemplos:
+
+Usando o "strip()":
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str3 = "Minecraft foi escrito em Java!     ".strip();
+        System.out.println(str3.length());
+    }
+}
+Note que após a String variável "str3", existem vários espaços no final da frase, logo após ela existe o método ".strip()", ele eh
+o responsável por eliminar estes espaços na frase. O método ".length()" está dentro dos parentêses do "println", ele foi o responsável
+por mostrar quantos caracteres existem dentro da variável "str3", sendo que sem o método ".strip()" existiriam 35 caracteres, já com o método
+ali existem apenas 30 já que os espaços foram cortados 
+\\\\\\\\\\\\\\\\
+
+Usando o "trim()":
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str4 = "   Minecraft foi escrito em Java!";
+        String str_sem_espacos = str4.trim();
+        System.out.println(str_sem_espacos.length());
+    }
+}
+Agora os espaços estão no começo da variável "str4", o problema de usar o "trim()" eh que nós precisamos criar uma variável só para ele, isso
+faz que com que precisemos escrever mais para algo que pode ser resolvido com um simples ".strip()", lógico que são casos e casos, porém sempre que
+possivel tenha preferência pelo método ".strip()"
+\\\\\\\\\\\\\\\\
+
+10.3: Manipulação de Strings - toLowerCase e toUpperCase
+
+São bem tranquilos de compreender, os nomes sãp totalmente sugestivos, muito conhecidos e utilizados no Python também, estamos falando
+do método "toLowerCase()" e do "toUpperCase()", veja oq eles fazem:
+toLowerCase() = coloca todos os argumentos de uma String na forma minúscula
+toUpperCase() = coloca todos os argumentos de uma String na forma maiúscula
+
+Veja um simples exemplo:
+
+////////////////public class StrManipulation {
+    public static void main(String[] args) {
+        String str5 = "Eu amo usar a IDE intelliJ";
+        System.out.println(str5.toLowerCase());
+        String str6 = "Olá, mundo! Estou totalmente na forma maiúscula!";
+        System.out.println(str6.toUpperCase());
+    }
+}
+Um simples código que pega os argumentos de suas respectivas variáveis e as põe 
+na forma sugerida, "toLowerCase()" e "toUpperCase()"
+\\\\\\\\\\\\\\\\
+
+Lembre-se que existem várias formas de usarmos estes métodos, não se limite ao jeitos usados nestes exemplos
+
+10.4: Manipulação de Strings - indexOf e lastIndexOf
+
+O método "indexOf()" retorna o primeiro índice que ele encontrou baseado no que nós passamos como argumento para ele, ou seja, ele vai entregar
+a posição de itens específicos conforme foi solicitado para ele, já o "lastIndexOf()" retorna o último índice que lhe foi passado, entregando
+qual foi a última posição que o argumento passado apareçeu, veja abaixo:
+indexOf() = entrega o índice de onde apareceu pela primeira vez o argumento passado a ele
+lastIndexOf() = entrega ao índice do de onde apareceu o pela última vez o argumento passado a ele 
+
+Saiba que o "indexOf()" quando não encontra o argumento passado a ele, seu retorno será de "-1"
+
+Tanto o "indexOf()" quanto o "lastIndexOf()" podem receber uma "fromindex", isso significa que podemos escolher a partir de qual índice ele 
+vai começar a fazer sua análise, básicamente uma offset
+
+O método "lastIndexOf()" fuhciona de uma maneira parecida, ele faz o contrário do "indexOf()" porém seguindo a mesma lógica, nele podemos
+adicionar um "fromindex" também, a diferença aqui eh que ao invés dele começar no índice zero (sem nenhuma offset) ele vai começar do último
+índex dessa variável que contém uma String
+
+entenda que o "fromindex/offset" de cada um segue seu respectivo caminho e direção, ou seja, se o "indexOf()" começa da esquerda para a direita seu
+"fromindex/offset" vai seguir esse mesmo camiho e o mesmo vale para o "lastIndexOf()", já que ele começa da direita para a esquerda seu "fromindex/offset"
+vai seguir essa mesma lógica
+
+Exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str7 = "Banana";
+        System.out.println(str7.indexOf("ma", 2));
+        String str8 = "Laranja";
+        System.out.println(str8.lastIndexOf("a"));
+    }
+}
+Neste exemplo aqui temos duas variáveis com uma String e um texto dentro da mesma, analisando a primeira variável(str7), podemos ver que o
+"indexOf()" pede uma coisa que não existe dentro dessa variável, portanto ele tera o retorno "-1", já na segunda variável(str8) vemos que
+ele pode o índice de onde foi a última vez que usamos a letra "a", como não passamos nenhum "fromindex/offset" seu valor retornado será igual a "6"
+\\\\\\\\\\\\\\\\
+
+10.5: Manipulação de Strings - replace e substring
+
+O método "replace()" faz exatamente oq seu nome quer dizer, com ele nós podemos substituir ocorrências, se pedirmos para trocarmos todas as
+letras "x" pela letra "y" ele vai faze-lô
+
+primeiro passamos os argumentos que queremos subsituir (target) dentro das aspas, após isso separado por uma vírgula nós colocamos o
+argumento que será inserido no lugar do que virá a ser substituido (replacement), veja o exemplo abaixo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str9 = "Banana";
+        System.out.println(str9.replace("a", "e"));
+    }
+}
+neste código temos uma variável String (str9) que recebeu um texto, após isso dentro do "println" nós mandamos o método ".replace()" substituir
+todas as letras "a" presentes na variável pela letra "e". Lembre-se que os argumentos passados podem ser qualquer coisa, não se limite a apenas
+um único caractere
+\\\\\\\\\\\\\\\\
+
+Já o método "substring()" nós podemos extrair coisas das Strings com base no seu índice, ou seja, baseado no índice onde uma palavra começa e 
+termina, com este método nós podemos extrair ela e assim teremos o retorno da parte que extraímos, exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String str10 = "Diga olá a todos, Java!";
+        System.out.println(str10.substring(0, 16));
+    }
+}
+neste código temos uma variável String (str10), perceba que dentro do "println" temos o método "substring()", ela vai ser a responsável por
+extrair oq pedimos com base nos índices, neste caso colocamos os índices "0" e "16", isto significa que ela vai pegar tudo o índice "0" até
+o índice "16" e depois escrever no nosso terminal
+\\\\\\\\\\\\\\\\
+
+
+-----------------------------------------------------------------
+
+
+11: Arrays Simples
+
+O Conceito de "array" eh simples, são básicamente listas de dados onde podemos armazenar informações de algo especifico e atráves de diferentes
+formas podemos acessar seus dados, cada dado dessa array recebe seu índice, funciona de uma maneira bem parecida com oq vimos antes em relação a
+manipulação de string, ou seja, igual numa String cada elemento vai receber um índice (começando a partir do zero)
+
+Antes de declararmos uma array, devemos usar os colchetes após declararmos de qual tipo vai ser nossa array, se ela vai ser de números ineiros, Strings
+e etc, após isso damos o nome a array e usando as chaves{} colocamos seus argumentos separados por vírgulas 
+
+Nós podemos acessar os objetos de uma array a usando os colchetes[], veja um exemplo abaixo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] array1 = {1, 41, 141, 151, 6};
+        System.out.println(array1[1]);
+    }
+}
+aqui temos uma array que recebe diversos números inteiros devido ao tipo primitivo que foi passada a ela, após isso no "println" nós
+chamamos a nossa array e dentro dos colchetes[] colocamos o índice que contém o argumento que queremos acessar, neste caso a valor "41" vai ser
+retornado no terminal
+\\\\\\\\\\\\\\\\
+
+Quando nós tentamos acessar um índice que não existe na nossa array o código vai deixar de funcionar, porém existe um jeito de fazermos isso sem
+dar erro, para isso nós devemos usar o método "new (tipo primitivo do que var ser adicionado aqui)"[novo argumento aqui], preste atenção, ao usar
+esse método nós estamos criando uma array vazia porém que tem capacidade para ser // corrigir essa parte aqui \\ preenchida por até argumentos, 
+no caso 4 índices, após isso
+podemos escolher qual argumento var ser atribuido a qual índice da array, exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] array2 = new int[4];
+        array2[3] = 69;
+        System.out.println(array2[3]);
+    }
+}
+análise bem esse código, aqui criamos uma array vazia porém que tem capacidade máxima de até 4 índices para ser preenchida, após isso
+chamamos essa array e dentro dos colchetes[] nós informamos qual índice queremos acessar e usando o "=" adicionamos o valor
+"69" ao índice 3
+\\\\\\\\\\\\\\\\
+
+Resumindo, existem duas forma de criar uma array no Java, vc pode declarar a array e já atribui todos os itens que ele vai ter ou você cria
+um array dizendo o tamanho máximo dele para posteriormente ir adicionado seus valores
+
+11.1: Arrays multidimensionais
+
+As arrays multidimensionais/matrizes são objetos que podem ter várias dimensões, como se fosse um conjunto de arrays, para montar uma array 
+multidimensional nós devemos declarar seu tipo primiivo e após isso usar dois colchetes [][] ao invés de um só como nas listas simples, após 
+isso podemos declarar seu nome e passar seus dados, assim podemos usar várias chaves dentro dessa array como se fosse um conjunto
+
+Dentro de uma array multidimensional cada conjunto de chave se torna um índice, ou seja, a chave dentro dessa array ganha um indentificador
+numeral que começa a partir do zero e o mesmo vale para os valores dentro dessas arrays
+
+Para acessarmos as valores de uma array multidimensional primeiros precisamos passar (dentro dos colchetes[]) o índice de qual array 
+dentro do principal queremos acessar e depois logo ao lado abrimos outro colchete[] e escrevemos qual o índice dessa array que nós
+queremos ver, veja o exemplo abaixo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        String[][] MultiArray1 = {{"Olá, mundo!", "Thanos"}, {"Java", "Spring Boot"}};
+        System.out.println(MultiArray1[0][1]);
+    }
+}
+temos um código que começa declarando uma String e logo após temos dois colchetes[][] sendo isso que informa que essa array eh multidimensional, após
+isso passamos seu nome "MultiArray1", note que temos uma chave{} que engloba tudo, essa eh a chave principal e depois ainda dentro dessa chave temos
+outras duas chaves, cada chave dessa recebe um índice que começa do zero, dentro de cada uma dessas chaves menores temos duas Strings em cada
+que também recebem um índice que começa do zero, após isso dentro do "println" nós chamamos nossa array multidimensional com o colchte[] indicando
+que estamos chamando a primeira chave pelo índice 0 e o segundo colchete[] indicando que estamos chamando o índice 1, assim nosso "println" vai
+retornar a String "Thanos"
+\\\\\\\\\\\\\\\\
+
+Lembrese que cada colchete[] quando nós declaremos nossa String que contém os arrays multidimensionais deve conter todos os colchetes[] para dizer
+quantas dimensões contém esse array, no caso acima nós temos duas dimensões, se caso precisar de uma terceira dimensão devemos adicionar mais um colchete
+após o String, assim:
+String[][] MultiArray1 -> duas dimensões
+String[][][] MultiArray1 -> três dimensões
+nestes casos os índices sempre vão começar do zero sem excessões
+
+Nós podemos fazer com as Arrays Multidimensionais a mesma coisa do que com as Arrays Simples, podemos dizer qual o tamanho vai ter o array sem precisar
+adicionar os argumentos de imediato e podendo adicionalos posteriormente, assim:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[][] MultiArray2 = new int[2][2];
+        MultiArray2[0][0] = 1;
+        MultiArray2[0][1] = 2;
+        MultiArray2[1][0] = 3;
+        System.out.println(MultiArray2[0][0]);
+    }
+}
+repare que nós criamos um Array Multidimensional com duas dimensões devido aos dois colchetes[][], após isso usando o mesmo argumento de um Array Simples
+nós, o "new int", foi passado a ele também duas dimensões com os dois colchetes[][], isso significa que ele vai ter duas dimensões e dentro de cada
+dimensão ele vai guardar dois argumentos, após isso passamos os argumentos que cada um vai armazenar dentro de si
+\\\\\\\\\\\\\\\\
+
+podemos ver o código acima da seguinte maneira:
+{{1, 2}, {3}}
+
+
+-----------------------------------------------------------------
+
+
+12: Loops - For
+
+O conceito de Loops existe também no Java, isso significa que coisa X vai acontecer até que alguma condição seja atendida, podemos misurar Loops
+com Arrays, fazendo interações com os itens da lista até que todas as condições sejam atendidas, esta condição usa da mesma lógica do JavaScript, ou seja,
+começamos criando uma váriavel de controle do loop, após isso fazemos o teste lógico responsavel por verificar se a condição do loop já foi atendida ou não,
+e por último criamos o incremento que só será executado se o teste lógico der a devida permissão (que nesse caso seria a mesma coisa que dizer que a 
+condição necessároa não foi atendida e o loop deverá se repetir)
+
+O Java exige que dentro da condição dentro do for() seja separada por um ponto e vírgula(;)
+
+exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] SimpArray1 = {1, 2, 3, 4};
+        for(int i = 0; i < SimpArray1.length; i++) {
+            System.out.println(SimpArray1[i]);
+        }
+    }
+}
+aqui nós temos um exemplo de código que faz o aumento de um número até que ele seja atendido como pedido, vejamos:
+-temos uma Array com 4 valores dentro dela, sendo eles os números: 1, 2, 3 e 4
+-no primeiro parâmetro do for criamos uma variável "i" que recebe o número 0, ele será o nosso contador
+-no segundo parâmetro temos nosso teste lógico, ele eh responsavel por validar se o loop deverá continuar acontecendo ou não, neste caso ele
+pergunta se o contador "i" é menor que o número de valores que temos dentro da nossa Array
+-depois disso temos o incremento, ele só vai acontecer enquando o teste lógico não for atendido neste caso ele vai aumentar o valor do contador
+"i" em mais 1 (i + 1)
+-o "println" eh o responsável por mostrar o valor de "i", isso vai se repetir 4 vezes, ou seja nosso loop se repetirá 4 vezes até que o valor de
+"i" seja igual ao valor de valores dentro da nossa Array
+\\\\\\\\\\\\\\\\
+
+12.1: Loops - Foreach
+
+Funcionando de uma muito parecida do "For", porém ele não necessita que especifique quantas vezes ele precisa se repetir, ele mesmo para por
+conta prórpia básicamente, pegando o último exemplo de código do "for", vimos que criamos um contador, um teste lógico e por fim criamos o
+incremento do contador, o "Foreach" anula essas necessidades, pois ele exige que criamos somente uma váriavel prórpia, veja o exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] SimpArray2 = {1, 2, 3, 4};
+        for(int num : SimpArray2) {
+            System.out.println(num);
+        }
+    }
+}
+note que os dois códigos cumprem o mesmo propósito, eles tem a mesma saída porém com a escrita diferente, temos nossa Array com seus 4
+valores, após isso temos o "for" e dentro deles criamos uma váriavel chamada "num", podemos interpretar o ":" como um "length", ele é o
+responsavel por atribuir a Array "SimpArray2" ao método "length" mesmo esse método não estando explicitamente escrito
+\\\\\\\\\\\\\\\\
+  
+
+Devemos ter em mente que os dois tipos de for tem usos diferentes para ocasiões diferentes dependendo da exigência ou situação, básicamente
+o primeiro "for" deverá ser preferencialmente usado quando nós sabemos exatamente o valor que quermos validar/varificar e etc, já o "Foreach" eh
+para quando nós não sabemos quantos índices/valores e etc nós temos, básicamente o "for" eh mais direto a exatamente oq queremose e quando temos
+certezam diferente do "Foreach"
+
+12.2: Loops - While
+
+O termo "while" eh bem conhecido no mundo da programação, ele quer dizer "enquanto", isso significa que enquanto a condição X não foi atendida
+a função Z vai ser executada até a função X for atendida, exemplo
+
+Diferente do "for" e do "foreach" que tinham seus contadores dentro do seus parâmetros, o "while" precisa ter o contador fora so escopo dele, ou seja,
+eh como seu o teste lógico dele ficasse fora de seu escopo e o incremento dentro da sua indentação
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] SimpArray3 = {1, 2, 3, 4};
+        int cont = 0;
+        while (cont < SimpArray3.length) {
+            cont++;
+            System.out.println(cont);
+        }
+    }
+}
+aqui temos um código bem simples, vejamos os detalhes:
+-começamos com uma Array que contém 4 valores
+-depois temos uma variável que contém o número 0 sendo ela responsável por fazer parte do teste lógico "while"
+-no "while" temos os parâmetros que diz fala: enquanto o "count" for menor que o "length"(tamanho) da Array adicione mais 1 (cont + 1)
+no meu "count" até que o count seja maior que o tamanho da minha Array 
+\\\\\\\\\\\\\\\\
+
+12.3: Loops - Do While
+
+Os loops "do While" são muito parecidos com o "while", ele pode ser lido assim: faça(do) enquanto(while), ou seja, ele manda algo acontecer
+enquanto o while for true, a função X vai ser executada enquanto o contador Z for menor que o número Y
+
+"while" e "do while" tem uma pequena diferença, o "do while" primeiro executa sua condição (no caso, o "do") e depois faz o teste lógico, básicamente
+no "while" o loop só acontece se a condição exigida for atendida e caso ela seja false o loop nunca chegará a acontecer, já o "do while" faz justamente o
+contrário, ela primeiro vai executar oq foi passado pra ela pra só depois disso disso o teste lógico ser executado dentro do "while"
+
+Exemplo:
+
+////////////////
+public class StrManipulation {
+    public static void main(String[] args) {
+        int[] SimpArray4 = {1, 2, 3, 4};
+        int num = 0;
+        do {
+            System.out.println(SimpArray4[num]);
+            num++;
+        } while (num < SimpArray4.length);
+    }
+}
+temos um código usando o "do while", ele faz a mesma coisa do que o "while" porém com a escrita diferente, indo por partes temos:
+-uma Array simples com 4 valores
+-um contador que começa do número 0
+-o "do" vai imediatamente escrever na tela o valor do "num" em relação a Array e logo em sequencia adiciona mais um número ao contador "num"
+-no while acontece o teste lógico, dizendo que enquanto "num" for menor que o tamanho da Array o "do" vai ser executado novamente até
+o fim do loop
+\\\\\\\\\\\\\\\\
+
+
+-----------------------------------------------------------------
+
+
+13: Programação Orientada a Objetos (POO)
+
+O termo "Programação Orientada a Objetos" tem como seu pricipal objetivo tentar representar ao máximo possível algo que chegue próximo a alguma
+representação do mundo real, eh dai de onde vem s silga "POO"
+
+A "Programação Orientada a Objetos" tem 4 pilares, sendo eles:
+-Abstração;
+-Escapsulamento;
+-Herança;
+-Polimorfismo.
+
+Vamos seguir a analogia, vamos imaginar um carro, ele tem suas características, nós conseguimos saber elas, como sua cor, potência do motor, marca, modelo,
+ano e etc, essas características no mundo da programação são chamadas de "Atributos". Além das características do carro ele também possui funções, como a
+função de ligar, acelerar, freiar, trocar de marcha e etc, nós chamamos estas funções de "Métodos"
+
+Ainda dentro da "Programação Orientada a Objetos" eixstem dois termos muito famosos, sendo eles a "classe" e o "objeto"
+classe = modelo que vai ser seguindo para que um objeto seja criado
+objeto = resultado(s) da classe
+
+vamos imaginar que temos um molde e dentro desse molde nós temos um carro, dentro da "Programação Orientada a Objetos" o molde eh a "classe" e o resultado
+desse molde nós temos o "objeto", onde um molde pode criar vários objetos diferentes que podem interagir entre si
+
+13.1: Criação de objetos com classe
+
+Note que TODOS os códigos que vimos até agr tinham sua primeira palavra como "public", ele eh o modificador de acesso da classe. Logo após ele
+vinha a palavra "class", ele indica que oq está sendo contruido eh uma classe e seguido depois do nome da classe, sempre opte por colocar o nome da classe
+com o(s) nome(s) maíusculos e depois abrimos e fechamos o escopo dessa classe
+
+Quando nós criamos uma nova classe dentro do diretório "src" o intelliJ sugere alguns nomes para nós, use-os, eles são muito importantes para a contruções de
+várias aplicações diferentes
+
+Na segunda linha dentro do escopo da classe nós devemos passar o modificador de acesso do atributo, ele pode ser público, privado e etc, apos isso nós
+devemos passar qual o tipo primitivo(String, int, double e etc) esse modificador vai ser, dá também para passarmos valores padrões para a classe, isso
+significa que podemos após darmos o nome da classe usamos o "=" para darmos seu valor "default"
+
+lembre-se que todos os dados inseridos dentro do escopo da classe principal são os atríbutos dela mesma, elas são suas características para cada objeto
+construido dentro da nossa aplicação (que nesse nosso exemplo seria o carro)
+
+eh importante que quando nós criamos uma classe, somente oq se relaciona e ela mesma esteja dentro do arquivo, ou seja, quando nós criamos uma
+classe com todos seus atríbutos e características somente isso esteja lá dentro, nada mais nem nada a menos, pois o sistema, a lógica, e a estrutura
+do código deve estar principalmente dentro do "Main", e a classe separada desse arquivo
+
+Agora dentro do "Main", após já termos construido a classe em um arquivo separado nós podemos começar a criar nossos objetos, dentro do escopo
+da "static void" nós começamos chamando nossa classe e passando o nome do objeto (chame e variável para melhor entendimento qm sabe), após isso
+usando a palavra reservada "new" nós chamamos novamente a classe com os parentêses no final da classe onde nós podemos passar seus parâmetros
+
+depois de já termos criado o objeto nós podemos começar a chamar o mesmo e usando o "." e passarmos as características desse objeto, lembre-se
+que as características são os atríbutos que criamos no arquivo da classe deste objeto que acabamos de criar
+
+Vejamos um exemplo: 
+
+//////////////// AQUIVO DA CLASSE
+public class Carro {
+    public String marca;
+    public String modelo;
+    public String cor;
+    public int ano;
+}
+temos uma classe pública que recebe o nome de Carro, abrindo as chaves{} e dentro do seu escopo temos as atríbutos/características dessa mesma
+classe, observe que o tipo primitivo de cada um dos atríbutos deve sempre estar presente
+\\\\\\\\\\\\\\\\
+
+//////////////// ARQUIVO MAIN
+public class Main {
+    public static void main(String[] args) {
+        Carro fusca = new Carro();
+        fusca.marca = "VOLKSWAGEN";
+        fusca.modelo = "Fusca";
+        fusca.cor = "Preto";
+        fusca.ano = 1990;
+        System.out.println(fusca.cor);
+    }
+}
+veja bem, note que nós chamamos nossa classe "Carro" como se ela fosse um tipo primitivo já que ela virou uma classe do próprio java para essa
+nossa aplicação, eh como se nós estivessemos criando uma variável. Após o "=" temos a palavra reservada "new" e chamamos novamente a classe "Carro()", isso
+quer dizer que criamos(new) um novo objeto da classe "Carro", também chamado de onstanciar um objeto no mundo da programação. Finalmente depois de tudo
+isso nós começamos a passar as características de cada um do atríbutos que criamos lá dentro do arquivo da classe, eh como se a classe 
+fosse as instruções do que precisamos para montar um carro e o arquivo "Main" fosse a montadora desse carro. 
+Por fim o "println" escreve no terminal qual a característica salva na cor de fusca
+\\\\\\\\\\\\\\\\
+
+13.2: Método construtor de uma classe
+
+Os métodos construtores são as ações (também chamados de funções) que nosso objeto pode fazer, isso significa que dentro de alguma classe nós podemos
+fazer com que ela execute ações, como no exemplo da classe "Carro", nós podemos criar uma método para que ele ligue por exemplo
+
+A primeira funcionalidade que estamos vendo são os métodos construtores, os métodos construtores devem estar dentro do arquivo da própria classe, já que
+eles ficam dentro dos parentêses no aquivo "Main", observe o exemplo que vimos anteriormente, perceba que nessa linha aqui:
+Carro fusca = new Carro();
+que foi onde nós criamos o objeto "Carro", olhe como os parentêses estão vazios, isso aconteçe pq não foi passado nenhum método construtor a este objeto
+
+Exeemplo:
+
+//////////////// ARQUIVO DA CLASSE
+public class Carro {
+    public String marca;
+    public String modelo;
+    public String cor;
+    public int ano;
+
+    public Carro(String marca, String modelo, String cor, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.ano = ano;
+    }
+}
+olhe como nós criamos um método público com a classe do objeto "Carro", lembre-se que eh muito importante sempre dizermos o tipo primitivo do método
+construtor antes mesmo de definir ele, eh como se colocassemos todas as informações do carro dentro de um único método. O nome "this" serve (neste caso) 
+para acessarmos os dados dentro da classe, isso signfica que estamos pegando alguma característica da nossa classe e a passando dentro do método
+construtor usando o "this."
+\\\\\\\\\\\\\\\\
+
+//////////////// ARQUIVO MAIN
+public class Main {
+    public static void main(String[] args) {
+        Carro gol = new Carro("Gol", "VOLKSWAGEN", "Branco", 2004);
+        gol.cor = "Cinza";
+        System.out.println(gol.cor);
+    }
+}
+observe que aqui que nós chamamos a classe "Carro" e depois criamos um objeto chamado "gol", dentro do seus parentêses estão todas as suas características,
+tudo oq fizemos no código do exemplo "13.1" foi feito em uma única linha dentro do "Main", nós passamos os métodos dentro do arquivo da classe do "Carro" e
+no "Main" nós abordamos ele, passando todos eles dentro do método construtor do objeto da classe "Carro". Veja também que esses mesmos métodos podem ser
+alterados mesmo depois de declarados, onde nesse caso nós alteramos a cor do objeto "gol" que antes era uma e depois passou a ser outra 
+\\\\\\\\\\\\\\\\
+
+13.3: Métodos (funcionalidades) de uma classe
+
+Os métodos/funcionalidades são as ações de um objeto, oq ele pode fazer, executar e etc. As funcionalidades são construídas de uma maneira muito parecida
+com os métodos construtores, a excessão eh que para construirmos a funcionalidade nós não usamos o nome da classe, nós usamos o nome do método em específico
+que queremos pra ele e qual vai ser o seu retorno
+
+lembre-se que nós consguimos deixar o atríbutos da classe com alhum valor padrão e o mesmo vale para as funcionalidades, porém, não eh recomendado fazer
+isso dentro da classe, normalmente tudo em relação as características devem ser específicados dentro do método construtor e dependendo do situação quando
+o objeto vai sempre começar com o mesmo valor nós podemos específicar este estado dentro da classe construtora do arquivo "class", sem precisar específicar o
+mesmo dentro do "Main"
+
+Para criamos uma funcionalidade devemos começar dizendo sua visilidade (pública, privada e etc), após isso devemos informar quando o seu retorno, podendo
+ser uma "String", "bolean", "int" e assim por diante, porém quando nós não queremos um retorno e queremos que apenas alguma alteração seja feita nós usamos
+o método "void", ele quer dizer que nós não vamos ter retorno porém nossa acçao vai ser executada e normalmente alterando algum valor
+
+Exemplo de um código que trabaha com funcionalidades:
+
+//////////////// ARQUIVO DA CLASSE
+public class Carro {
+    public String marca;
+    public String modelo;
+    public String cor;
+    public int ano;
+    public boolean ligado;
+    public int velocidade;
+
+    public Carro(String marca, String modelo, String cor, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.ano = ano;
+        this.ligado = false;
+        this.velocidade = 0;
+    }
+
+    public void ligar() {
+        if (this.ligado) {
+            return;
+        } else {
+            this.ligado = true;
+        }
+    }
+
+    public void desligar() {
+        if (!this.ligado) {
+            return;
+        } else {
+            this.velocidade = 0;
+            this.ligado = false;
+        }
+    }
+
+    public void acelerar(String SpeedType) {
+        switch (SpeedType) {
+            case "forte":
+                this.velocidade += 1000;
+                break;
+            case "fraco":
+                this.velocidade += 500;
+        }
+    }
+
+    public void acelerar() {
+        this.velocidade += 750;
+    }
+}
+nessa parte da classe nós criamos duas características a mais para a nossa classe, temos uma boleana que serve como o liga e desliga do carro e a outra
+guarda a velocidade do carro (nesse caso, o RPM do motor), após isso na classe construtora as duas características vem com um valor padrão, que vai ser
+o carro estar por padrão desligado e isso automaticamente faz a velocidade/RPM ser igual a zero. 
+Temos uma funcionalidade chamada de "ligar()", ela básicamente eh a responsável por ligar o carro, o if serve para verificar se o carro já está ligado, 
+caso já esteja ela vai retornar, porém caso o carro não esteja ligado o valor de "ligado" vai passar a ser "true". 
+Depois disso temos outra funcionalidade que eh a responsável por desligar o carro, fazendo a mesma coisa que a função ligar, porém verificando 
+se o carro já está desligado.
+Após isso entra a funcionalidade de acelerar o carro, note que ela recebe o "void" pq ela não escreve nenhum valor, ela apenas muda eles por
+debaixo dos panos, veja como dentro dos parentêses existe o "(String SpeedType)", ele eh o responsável por ser a ponte entre o arquivo "Main" e o código
+do arquivo da classe, ou seja, iss
+\\\\\\\\\\\\\\\\
+
+
+
+
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+--: Chá anti-esquecimento
+
+No intelliJ podemos usar o "sout" para escrever automáticamente "System.out.println();", poupando assim tempo sem precisar escrever
+mais do que o necessário
+
+
+-----------------------------------------------------------------
